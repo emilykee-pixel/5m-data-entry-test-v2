@@ -20,19 +20,23 @@ Task
 
 (a) What does the buggy version actually return for [1, 2, 3, 4, 5, 6, 8], and why?
 
-    Answer:
+    Answer: 3. The condition n % 2 == 1 checks for a remainder of 1, which actually finds and counts odd numbers (1, 3, 5) instead of even numbers.
 
 (b) Fix the bug. Write the corrected function below.
     (A one-character change is enough, but you must understand why.)
 """
 
 def count_evens(numbers):
-    # your corrected code here
+    count = 0
+    for n in numbers:
+        if n % 2 == 0:
+            count = count + 1
+    return count
     pass
 
 
 """
 (c) In one sentence, explain in plain English what `n % 2 == 0` checks.
 
-    Answer:
+    Answer: It checks whether a number is even by verifying that dividing it by 2 leaves a remainder of zero.
 """
